@@ -1,0 +1,52 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding:0px;
+	margin:0px;
+	-webkit-text-size-adjust:none;  /* for iphone */
+}
+#layout {
+	display:table;
+	border-spacing:0px;
+	border-collapse:collapse;
+	xheight:66%;
+	xwidth:100%;
+}
+
+#ul {
+	display:table-cell;
+	xwidth:66%;
+	background-color:#eaa;
+}
+
+#divider {
+	display:table-cell;
+	width:7px;
+	background-image:url(i/vbar.png);
+}
+#ur {
+	display:table-cell;
+	xwidth:calc(34% - 7px);
+	background-color:#aea;
+}
+
+#dashboard {
+	position:relative;
+	height:7px;
+	background-image:url(i/hbar.png);
+}
+#ll {
+	height:34%;
+	background-color:#aae;
+}
+#knob {
+	position:absolute;
+	xtop:calc(66% - 5px);  /* (17 - 7) / 2 = 5 */
+	xleft:calc(66% - 5px);
+	background-image: url(i/knob.png);
+	height:17px;
+	width:17px;
+	line-height:1px;
+	font-size:1px;
+}
