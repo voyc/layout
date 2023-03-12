@@ -1,7 +1,7 @@
 # layout
 
-Layout three windows with thumb.
+Layout browser window into multiple panels.
 
-https://layout.voyc.com
+demo: https://layout.voyc.com
 
-developers wiki: https://curriculum.voyc.com/projects/layout
+developer's wiki: https://curriculum.voyc.com/doku.php?id=projects:layout:layout
