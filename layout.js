@@ -44,33 +44,33 @@ voyc.Layout.prototype = {
 
 		// handle mouse events
 		var self = this;
-		voyc.addEvent(this.knob.e, 'mouseover', function() {
-			if (!self.knob.dragging) {
-				self.knob.e.style.backgroundPosition = "0px -17px"; 
-				self.knob.e.style.cursor = 'pointer';
-			}
-		});
-		voyc.addEvent(this.knob.e, 'mouseout', function () {
-			if (!self.knob.dragging) {
-				self.knob.e.style.backgroundPosition = "0px 0px"; 
-				self.knob.e.style.cursor = 'default';
-			}
-		});
+		//this.knob.e.addEventListener('mouseover', function(evt) {
+		//	if (!self.knob.dragging) {
+		//		self.knob.e.style.backgroundPosition = "0px -17px"; 
+		//		self.knob.e.style.cursor = 'pointer';
+		//	}
+		//}, false)
+		//this.knob.e.addEventListener('mouseout', function(evt) {
+		//	if (!self.knob.dragging) {
+		//		self.knob.e.style.backgroundPosition = "0px 0px"; 
+		//		self.knob.e.style.cursor = 'default';
+		//	}
+		//}, false)
 
 		// setup drag
 		voyc.dragger.enableDrag(this.knob.e);
-		voyc.dragger.addListener( this.knob.e, 'grab', function(x,y) {
+		voyc.dragger.addListener( this.knob.e, 'grab', function(e,x,y) {
 			self.knob.e.style.backgroundPosition = "0px -17px"; 
 			self.knob.e.style.cursor = 'move';
 			self.knob.dragging = true;
 		});
-		voyc.dragger.addListener( this.knob.e, 'drag', function(x,y) {
+		voyc.dragger.addListener( this.knob.e, 'drag', function(e,x,y) {
 			self.knob.point.x = x + self.knob.offset;
 			self.knob.point.y = y + self.knob.offset;
 			self.layout();
 			return {x:x,y:y};
 		});
-		voyc.dragger.addListener( this.knob.e, 'drop', function(x,y) {
+		voyc.dragger.addListener( this.knob.e, 'drop', function(e,x,y) {
 			self.knob.e.style.backgroundPosition = "0px -17px";
 			self.knob.e.style.cursor = 'default';
 			self.knob.dragging = false;
